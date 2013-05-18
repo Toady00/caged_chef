@@ -1,12 +1,12 @@
-# CaggedChef
+# CagedChef
 
-TODO: Write a gem description
+CagedChef is a middleware for Faraday. 
 
 ## Installation
 
 Add this line to your application's Gemfile:
 
-    gem 'cagged_chef'
+    gem 'caged_chef'
 
 And then execute:
 
@@ -14,11 +14,26 @@ And then execute:
 
 Or install it yourself as:
 
-    $ gem install cagged_chef
+    $ gem install caged_chef
 
 ## Usage
 
-TODO: Write usage instructions here
+````ruby
+url = 'https://example.chef.com'
+
+chef_auth_options = {
+  key: '/path/to/client/private/key',
+  host: url,
+  user_id: 'your-chef-user-id'
+}
+
+faraday = Faraday.new(url: url) do |faraday|
+  faraday.request :chef_auth, chef_auth_options
+  # other faraday settings
+end
+
+response = faraday.run_request('http_method', "#{url}/some/path", "body", {})
+````
 
 ## Contributing
 
