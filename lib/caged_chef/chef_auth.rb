@@ -23,7 +23,7 @@ module CagedChef
     def mixlib_headers
       {
         http_method: @env[:method],
-        path: @env[:url].request_uri,
+        path: @env[:url].path,
         body: @env[:body],
         host: @options[:host],
         user_id: @options[:user_id],
