@@ -1,5 +1,5 @@
 require 'mixlib/authentication/signedheaderauth'
-require 'openSSL'
+require 'openssl'
 require 'faraday'
 
 module CagedChef
