@@ -28,7 +28,7 @@ chef_auth_options = {
 }
 
 faraday = Faraday.new(url: url) do |faraday|
-  faraday.request :chef_auth, chef_auth_options
+  faraday.request :caged_chef, chef_auth_options
   # other faraday settings
 end
 
