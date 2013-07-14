@@ -10,7 +10,7 @@ describe CagedChef::ChefAuth do
   let(:expected_headers) { {"X-Ops-Sign"=>"algorithm=sha1;version=1.0;", "X-Ops-Userid"=>"hex", "X-Ops-Timestamp"=>"2013-01-01T17:00:00Z", "X-Ops-Content-Hash"=>"2jmj7l5rSw0yVb/vlWAYkK/YBwk=", "X-Ops-Authorization-1"=>"f1Hz2UDpsXLLh0T06274A86ka4NmcWl51Irjwb47Xr6bDnBaZcfx4l9mhdBP", "X-Ops-Authorization-2"=>"KAjDM5wQBDU/xkFewO+VAq4DUHNx/qvjEJGeAqSLK8dLMGOR35mJkNZIz3sb", "X-Ops-Authorization-3"=>"DTxlX0fHNNriAYt/oZcWqIIqI+V0oP+ReEvtnLQRuxM2yWpctFuOJytxcSnV", "X-Ops-Authorization-4"=>"NCmTpO/35dWquOLl91PVcYgStki9tFvYXH4Hc9bvlCUjYwxB3BgELrS7Ovk1", "X-Ops-Authorization-5"=>"8fw3kgGYpyeke5kY8z7w1p10qyCvEVZCSxDBUta9owWGau6pc38TvD8mymH7", "X-Ops-Authorization-6"=>"LzU34mUiDgKV8O9hGowJFsHNiYDMolSBaM3PVdjhVw=="} }
 
   before(:each) do
-    time = Time.new(2013, 1, 1, 12, 0, 0)
+    time = Time.new(2013, 1, 1, 12, 0, 0, "+05:00")
     Timecop.freeze(time)
 
     @chef_auth_options = {
